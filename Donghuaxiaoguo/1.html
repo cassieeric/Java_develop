@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/easeljs-0.7.1.min.js"></script>
+    <script src="js/tweenjs.min.js"></script>
+    <script>
+        window.onload=function () {
+            var  stage=new createjs.Stage(canvas);
+            var d=new createjs.DOMElement("instrutions");
+            d.alpha=0;
+            d.x=50;
+            createjs.Tween.get(d).wait(100).to({y:40,alpha:1},2000,createjs.MotionGuidePlugin.bounceIn);
+
+            stage.addChild(d);
+        createjs.Ticker.addEventListener("tick",stage);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="instrutions" style="width: 400px; height: 300px;border: 1px dashed #00d0ff;text-align: center; visibility: hidden">
+        <h3>游戏说明</h3>
+      <p><b>点击</b><span style="color: red;">红色</span>按钮</p>
+        <p >Make sure you click them <span style="text-decoration: underline;">all</span>before time runs out!</p>
+        <p>Rack up <i>as many points </i>as you can to reach the <span style="color: #0c61ff">BULE</span>level.</p><a href="http://www.4399.com/" style="background-color:#f00;">开始游戏</a>
+        <h2 style="font-weight: bold; margin-top: 30px;">
+		GOOD LUCK!</h2>
+
+
+</div>
+<canvas id="canvas" width="500" height="400" style="border: 1px solid#050000" ></canvas>
+</body>
+</html>
