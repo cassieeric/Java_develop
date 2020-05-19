@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link href="jquery.mobile/jquery.mobile-1.4.5.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="jquery.mobile/jquery-1.12.2.min.js"></script>
+<script type="text/javascript" src="jquery.mobile/jquery.mobile-1.4.5.js"></script>
+<script>
+function set_color(){
+    var red = $("#red").val();				//获取红色数值
+    var green = $("#green").val();				//获取绿色数值
+    var blue =$("#blue").val();				//获取蓝色数值
+    var color = "RGB("+red+","+green+","+blue+")";	//生成rgb表示的颜色字符串
+    $(".color").css("background-color",color); 			//设计内容框背景色
+}
+</script>
+<style type="text/css">
+.color {
+	height: 100%;
+	min-height: 400px;
+}
+</style>
+</head>
+<body>
+<div data-role="page">
+  <div data-role="header">
+    <h1>拾色器</h1>
+  </div>
+  <div data-role="content" class="color"> </div>
+  <div data-role="footer" data-position="fixed">
+    <form>
+      <input name="red" id="red" min="0" max="255" value="0" type="range" onchange="set_color();" />
+      <input name="green" id="green" min="0" max="255" value="0" type="range" onchange="set_color();" />
+      <input name="blue" id="blue" min="0" max="255" value="0" type="range" onchange="set_color();" />
+    </form>
+  </div>
+</div>
+</body>
+</html>
